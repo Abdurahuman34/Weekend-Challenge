@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			html,body{
+				display:flex;
+				flex-direction: column;
+				height:100%;
+			}
+			div{
+				flex:1;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<button id="addColorButton">Click Me to Add a Color!</button>
+		</div>
+		<script>
+			function addColor() {
+				var userColor = prompt("Enter a color");
+				var coloredDiv = document.createElement("div");
+				coloredDiv.innerHTML = "Click me to add a color!";
+				coloredDiv.setAttribute("style", "background-color:"  + userColor);
+
+				document.body.appendChild(coloredDiv);
+			}
+
+			var addButton = document.getElementById("addColorButton");
+			addButton.addEventListener("click", addColor);
+		</script>
+	</body>
+</html>
